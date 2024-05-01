@@ -12,7 +12,6 @@ namespace LibraryAPI.Controllers
         IDatabaseConnection _databaseConnection;
         public LibraryController(IDatabaseConnection _databaseConnection)
         {
-
             this._databaseConnection = _databaseConnection;
         }
         [HttpPost("CreateUser")]
@@ -24,7 +23,7 @@ namespace LibraryAPI.Controllers
             user.Active=true;
             if (_databaseConnection.CreateUser(user) < 0)
             {
-                return BadRequest("Unable To Create user");
+                return Ok("Unable To Create user Please try again");
             }
            return Ok(user);
         }
