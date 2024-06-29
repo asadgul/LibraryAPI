@@ -54,7 +54,7 @@ namespace LibraryAPI.Controllers
             return Ok(booksToSend);
 
         }
-        [HttpPost("OrderBooks/{userId}/{bookId}")]
+        [HttpGet("OrderBooks/{userId}/{bookId}")]
         public IActionResult OrderBook(int userId,int bookId)
         {
             var orderbook=_databaseConnection.OrderBook(userId,bookId);

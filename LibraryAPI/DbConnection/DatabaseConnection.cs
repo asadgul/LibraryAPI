@@ -370,7 +370,7 @@ namespace LibraryAPI.DbConnection
                         string insert = $"Insert into Books(Title,Author,Price,Ordered,CategoryId) Values('{book.Title}','{book.Author}','{book.Price}','{book.Ordered}','{sqlDataReader.GetInt32(0)}')";
                         sqlCommand = new SqlCommand(insert, sqlConnection);
                         int insertdata = sqlCommand.ExecuteNonQuery();
-                        if (insertdata > 1)
+                        if (insertdata > 0)
                         {
                             return;
                         }
